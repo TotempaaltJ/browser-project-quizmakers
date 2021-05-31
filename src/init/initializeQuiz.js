@@ -8,10 +8,7 @@ import createNextQuestionButtonElement from "../views/createNextQuestionButtonEl
 import { quizData } from '../data.js';
 import clearDOMElement from '../utils/clearDOMElement.js';
 import setTimeOut from '../handlers/setTimer.js';
-<<<<<<< HEAD
-=======
 import creatTimerElement from '../views/creatTimeElement.js';
->>>>>>> 0f6964c... add new setTimer using Dom
 
 const initializeQuiz = () => {
     quizData.currentQuestionIndex = 0;
