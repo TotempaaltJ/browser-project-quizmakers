@@ -7,6 +7,7 @@ import getDOMElement from "../utils/getDOMElement.js";
 import createNextQuestionButtonElement from "../views/createNextQuestionButtonElement.js";
 import { quizData } from '../data.js';
 import clearDOMElement from '../utils/clearDOMElement.js';
+import setTimeOut from '../handlers/setTimer.js';
 
 const initializeQuiz = () => {
     quizData.currentQuestionIndex = 0;
@@ -23,6 +24,7 @@ const startButton = () => {
         clearDOMElement(userInterfaceContainer);
         setupQuizHTML();
         showCurrentQuestion();
+        setTimeOut();
     })
     userInterfaceContainer.appendChild(startBtn)
 }
