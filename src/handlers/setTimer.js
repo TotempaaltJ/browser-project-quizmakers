@@ -5,11 +5,8 @@ const setTimeOut = () => {
   function myTimer() {
     document.querySelector('#timer').innerHTML = `${sec} Second Left`;
     sec++;
-    if (sec == -1) {
-      clearInterval(time);
-      alert(`Time Out`);
-    }
   }
+  myTimer(time);
 };
 
 export default setTimeOut;
