@@ -5,7 +5,7 @@ import { quizData } from '../data.js';
 
 const handleNextQuestion = () => {
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-    if (quizData.currentQuestionIndex = quizData.questions.length-1) {
+    if (quizData.currentQuestionIndex === quizData.questions.length-1) {
         creatSubmitBtn();
     }
 
