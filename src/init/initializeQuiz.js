@@ -11,7 +11,7 @@ import clearDOMElement from '../utils/clearDOMElement.js';
 import setTimeOut from '../handlers/setTimer.js';
 import creatTimerElement from '../views/creatTimeElement.js';
 
-import createLinks from '../views/createLinks.js';
+import createLinks from '../views/createLinks.js'
 
 
 const initializeQuiz = () => {
@@ -51,6 +51,7 @@ const setupQuizHTML = () => {
     quizContainer.appendChild(nextQuestionButton);
     // creatLinks
 
+    
     const linked = createLinks()
     quizContainer.appendChild(linked)
 
