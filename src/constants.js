@@ -11,5 +11,6 @@
 export const QUESTION_CONTAINER_ID = 'question-container';
 export const QUIZ_CONTAINER_ID = 'quiz-container';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
+export const PREVIOUS_QUESTION_BUTTON_ID = 'previous-question-button';
 export const TIMER_OUT = 'timer-out';
 export const SUBMIT_BTN_ID = 'submit-btn';

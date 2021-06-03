@@ -4,6 +4,7 @@ import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID } from "../constants.js";
 import showCurrentQuestion from "../handlers/showCurrentQuestion.js";
 import createDOMElement from "../utils/createDOMElement.js";
 import getDOMElement from "../utils/getDOMElement.js";
+import createPreviousQuestionButtonElement from "../views/createPreviousQuestionButtonElement.js";
 import createNextQuestionButtonElement from "../views/createNextQuestionButtonElement.js";
 import { quizData } from '../data.js';
 import clearDOMElement from '../utils/clearDOMElement.js';
@@ -24,11 +25,13 @@ const startButton = () => {
     startBtn.addEventListener('click', () => {
         clearDOMElement(userInterfaceContainer);
         setupQuizHTML();
-        showCurrentQuestion();
-       
+        showCurrentQuestion();  
+        setTimeOut();
     })
     userInterfaceContainer.appendChild(startBtn)
 }
+
+
 const setupQuizHTML = () => {
     const userInterfaceContainer = getDOMElement('user-interface');
     const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
@@ -37,6 +40,9 @@ const setupQuizHTML = () => {
     quizContainer.appendChild(appendTimer);
     quizContainer.appendChild(questionContainer);
 // add a previous button
+    const previousQuestionButton = createPreviousQuestionButtonElement();
+    quizContainer.appendChild(previousQuestionButton);
+    //Next button
     const nextQuestionButton = createNextQuestionButtonElement();
     quizContainer.appendChild(nextQuestionButton);
 //add submit button
