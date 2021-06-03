@@ -13,3 +13,7 @@ export const QUIZ_CONTAINER_ID = 'quiz-container';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const CURRENT_SCORE_ID = 'current-score';
 export const COUNTER_SPAN_ID = 'counter-span';
+export const PREVIOUS_QUESTION_BUTTON_ID = 'previous-question-button';
+export const TIMER_OUT = 'timer-out';
+export const SUBMIT_BTN_ID = 'submit-btn';
+
