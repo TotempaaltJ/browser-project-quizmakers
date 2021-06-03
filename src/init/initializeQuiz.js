@@ -11,6 +11,8 @@ import clearDOMElement from '../utils/clearDOMElement.js';
 import setTimeOut from '../handlers/setTimer.js';
 import creatTimerElement from '../views/creatTimeElement.js';
 
+import createLinks from '../views/createLinks.js';
+
 
 const initializeQuiz = () => {
     quizData.currentQuestionIndex = 0;
@@ -47,6 +49,10 @@ const setupQuizHTML = () => {
     //Next button
     const nextQuestionButton = createNextQuestionButtonElement();
     quizContainer.appendChild(nextQuestionButton);
+    // creatLinks
+
+    const linked = createLinks()
+    quizContainer.appendChild(linked)
 
     console.log(quizContainer);
     userInterfaceContainer.appendChild(quizContainer);
