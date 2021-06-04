@@ -12,6 +12,8 @@ import setTimeOut from '../handlers/setTimer.js';
 import creatTimerElement from '../views/creatTimeElement.js';
 
 
+
+
 const initializeQuiz = () => {
     quizData.currentQuestionIndex = 0;
 
@@ -47,6 +49,11 @@ const setupQuizHTML = () => {
     //Next button
     const nextQuestionButton = createNextQuestionButtonElement();
     quizContainer.appendChild(nextQuestionButton);
+    // creatLinks
+
+    
+
+   
 
     console.log(quizContainer);
     userInterfaceContainer.appendChild(quizContainer);

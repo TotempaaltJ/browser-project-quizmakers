@@ -7,6 +7,16 @@ const createQuestionElement = (question) => {
     const title = createDOMElement('h1');
     title.innerText = question.text;
     container.appendChild(title);
+   // add links 
+   const link1 = createDOMElement('a');
+   link1.innerText = question.links[0].text;
+   link1.href = question.links[0].href;
+   const link2 = createDOMElement('a');
+   link2.innerText = question.links[1].text;
+   link2.href = question.links[1].href;
+
+   container.appendChild(link1);
+    container.appendChild(link2);
 
     const answerContainer = createDOMElement('ol');
 
