@@ -12,8 +12,8 @@ const handleNextQuestion = () => {
         const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
         nextQuestionButton.innerText = 'Submit';
     }
-    if (quizData.currentQuestionIndex > 9) {
-        quizData.currentQuestionIndex = 9;
+    if (quizData.currentQuestionIndex >= quizData.questions.length) {
+        quizData.currentQuestionIndex = quizData.questions.length-1;
       }
     showCurrentQuestion();
 }
