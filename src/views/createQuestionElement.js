@@ -2,6 +2,7 @@
 
 import createDOMElement from '../utils/createDOMElement.js';
 import clickAnswerHandler from '../handlers/clickAnswerHandler.js';
+import { quizData } from '../data.js';
 
 const createQuestionElement = (question) => {
   const container = createDOMElement('div');
@@ -13,8 +14,7 @@ const createQuestionElement = (question) => {
 
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(question.answers[answerKey]);
-    const index = Object.keys(question.answers);
-    answer.dataset.questionIndex = index.indexOf(answerKey); // 0, 1, 2 ...
+    answer.dataset.questionIndex = quizData.currentQuestionIndex; // 0, 1, 2 ...
     answer.dataset.answerValue = answerKey; // 'a', 'b', 'c'
     answerContainer.addEventListener('click', clickAnswerHandler, {
       once: true,
