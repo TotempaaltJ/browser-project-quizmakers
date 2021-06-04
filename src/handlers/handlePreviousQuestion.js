@@ -8,7 +8,7 @@ import {NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 
 const handlePreviousQuestion = () => {
     
-if (quizData.currentQuestionIndex === 9) {
+if (quizData.currentQuestionIndex === quizData.questions.length -1) {
 const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
  nextQuestionButton.innerText = 'Next question';   
 }
