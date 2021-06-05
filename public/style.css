@@ -20,6 +20,7 @@ box-sizing: border-box;
   overflow: auto;
 }
 
+
 #summery{
   background-color: #188BD8;
   margin: 0;
@@ -104,4 +105,46 @@ box-sizing: border-box;
   font-size: 20px;
   width: 30%;
   cursor: pointer;
+
+/* Start Button */
+.start-btn {
+  background: #188bd8;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.start-btn:hover {
+  background: #fff;
+  color: #188bd8;
+}
+.start-btn:before,
+.start-btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #188bd8;
+  transition: 500ms ease all;
+}
+.start-btn:after {
+  right: 0;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.start-btn:hover:before,
+.start-btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+
 }
