@@ -5,8 +5,11 @@ function countCorrectAnswers() {
   for (const question of quizData.questions) {
     if (question.correct === question.selected) {
       count += 1;
+      
     }
   }
-  return count;
+  
+  return `${count}`;
+
 }
 export default countCorrectAnswers;

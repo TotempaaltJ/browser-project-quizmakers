@@ -17,9 +17,11 @@ const createQuestionElement = (question) => {
     answer.dataset.questionIndex = quizData.currentQuestionIndex; // 0, 1, 2 ...
     answer.dataset.answerValue = answerKey; // 'a', 'b', 'c'
     answer.classList.add('li-list');
+    
     answerContainer.addEventListener('click', clickAnswerHandler, {
       once: true,
     });
+    
 
     answerContainer.appendChild(answer);
   }
