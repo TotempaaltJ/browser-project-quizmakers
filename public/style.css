@@ -13,7 +13,7 @@
 }
 /* Start Button */
 .start-btn {
-  background: #1aab8a;
+  background: #188bd8;
   color: #fff;
   border: none;
   position: relative;
@@ -27,7 +27,7 @@
 
 .start-btn:hover {
   background: #fff;
-  color: #1aab8a;
+  color: #188bd8;
 }
 .start-btn:before,
 .start-btn:after {
@@ -37,7 +37,7 @@
   right: 0;
   height: 2px;
   width: 0;
-  background: #1aab8a;
+  background: #188bd8;
   transition: 500ms ease all;
 }
 .start-btn:after {
