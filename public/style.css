@@ -1,13 +1,107 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
 .centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  
+  
 }
 
 .scrollable {
   height: auto;
   max-height: 80vh;
   overflow: auto;
+}
+
+#summery{
+  background-color: #188BD8;
+  margin: 0;
+  padding: 0;
+}
+
+.questions-text{
+  text-align: center;
+  margin-left: auto;
+
+
+}
+.first-table{
+ 
+  text-align: center;
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 30px;
+  border:1px solid transparent ; 
+  margin-bottom: 30px;
+  border-collapse: collapse;
+ 
+}
+
+.first-table td {
+  padding: 8px 15px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  
+  padding: 25px;
+  border-collapse: collapse;
+ 
+}
+.summary-h2{
+  text-align: center;
+  margin:100px;
+  display : inline;
+}
+/* Result */
+.result-box {
+  text-align: center;
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.result-box  h1 {
+  font-size: 36px;
+  line-height: 40px;
+  color: #188BD8;
+  padding: 10px;
+}
+.result-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+.result-box table td {
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+  padding: 8px 15px;
+  font-weight: 500;
+  color: #000000;
+  width: 50%;
+  text-align: left;
+}
+.btn {
+  background-color: #188BD8;
+  padding: 20px;
+  color: #fff;
+  border: 1px solid #188BD8;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 30%;
+  cursor: pointer;
 }
