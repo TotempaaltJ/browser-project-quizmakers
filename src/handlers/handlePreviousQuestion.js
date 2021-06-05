@@ -3,7 +3,6 @@
 import showCurrentQuestion from "./showCurrentQuestion.js";
 import { quizData } from '../data.js';
 import getDOMElement from '../utils/getDOMElement.js';
-import { SUBMIT_BTN_ID } from '../constants.js';
 import {NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 
 const handlePreviousQuestion = () => {
