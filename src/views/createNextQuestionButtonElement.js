@@ -7,6 +7,7 @@ import createDOMElement from "../utils/createDOMElement.js";
 const createNextQuestionButtonElement = () => {
     const buttonElement = createDOMElement('button', { id: NEXT_QUESTION_BUTTON_ID });
     buttonElement.innerText = 'Next question';
+    buttonElement.classList.add('btn');
     buttonElement.addEventListener('click', nextQuestion);
     return buttonElement;
 }

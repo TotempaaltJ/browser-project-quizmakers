@@ -8,8 +8,10 @@ function countCorrectAnswers() {
       
     }
   }
+
   
   return `${count}`;
+
 
 }
 export default countCorrectAnswers;

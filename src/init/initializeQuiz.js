@@ -4,9 +4,14 @@ import {
   QUESTION_CONTAINER_ID,
   QUIZ_CONTAINER_ID,
   COUNTER_SPAN_ID,
+
+  TIMER_COUNTER,
+  BUTTONS,
+  RESULTS_DIV,
   SUMMARY_ID,
 
  
+
 } from '../constants.js';
 import showCurrentQuestion from '../handlers/showCurrentQuestion.js';
 import createDOMElement from '../utils/createDOMElement.js';
@@ -23,6 +28,7 @@ import countCorrectAnswers from '../utils/countCurrentAnswers.js';
 
 
 
+
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
 
@@ -31,6 +37,9 @@ const initializeQuiz = () => {
 };
 
 const startButton = () => {
+
+  const btns = createDOMElement('div', {id: BUTTONS})
+
   const userInterfaceContainer = document.querySelector('#user-interface');
   const startBtn = document.createElement('button');
   startBtn.textContent = 'Start Quiz';
@@ -84,6 +93,37 @@ const setupQuizHTML = () => {
    
   console.log(quizContainer);
   userInterfaceContainer.appendChild(quizContainer);
+  timerCounter.appendChild(counterSpan);
+  timerCounter.appendChild(appendTimer);
+  userInterfaceContainer.prepend(timerCounter);
+  // add a previous button
+  const previousQuestionButton = createPreviousQuestionButtonElement();
+  btns.appendChild(previousQuestionButton);
+
+  userInterfaceContainer.appendChild(btns);
+    //Next button
+  const nextQuestionButton = createNextQuestionButtonElement();
+  btns.appendChild(nextQuestionButton);
+  const resultsDiv = createDOMElement('div', { id: RESULTS_DIV });
+  btns.appendChild(resultsDiv);
+  for (let i = 0; i < 10; i++){
+    const div = createDOMElement('div');
+    const img = createDOMElement('img');
+    img.src = '';
+    div.appendChild(img);
+    resultsDiv.appendChild(div);
+  }
+  const okAudio = createDOMElement('audio');
+  okAudio.classList.add('ok-audio');
+  okAudio.src = '../public/ok.mp3';
+  
+
+  const noAudio = createDOMElement('audio');
+  noAudio.classList.add('no-audio');
+  noAudio.src = '../public/no.mp3';
+  userInterfaceContainer.appendChild(noAudio);
+  userInterfaceContainer.append(okAudio);
+  
 };
 
 window.addEventListener('load', initializeQuiz);

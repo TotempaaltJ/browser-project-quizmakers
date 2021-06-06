@@ -17,6 +17,7 @@ export const quizData = {
         a: 'constant - let - variable',
         b: 'var - const - let - function',
         c: 'var - let - const',
+        d: 'var - let - const',
       },
       correct: 'c',
       selected: null,
@@ -148,7 +149,7 @@ export const quizData = {
     },
     // Add more questions here
     {
-      text: 'What are all the types of Pop up boxes available in JavaScript?',
+      text: 'What are all the types of Pop up boxes available in JS?',
       answers: {
         a: 'blur - btoa',
         b: 'focus - fetch',
