@@ -16,5 +16,9 @@ const handleNextQuestion = () => {
         quizData.currentQuestionIndex = quizData.questions.length-1;
       }
     showCurrentQuestion();
+      
+      
+
 }
+
 export default handleNextQuestion;

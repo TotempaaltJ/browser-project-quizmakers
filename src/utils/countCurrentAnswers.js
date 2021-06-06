@@ -7,6 +7,6 @@ function countCorrectAnswers() {
       count += 1;
     }
   }
-  return count;
+  return `${count}/10`;
 }
 export default countCorrectAnswers;

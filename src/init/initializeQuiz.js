@@ -4,6 +4,9 @@ import {
   QUESTION_CONTAINER_ID,
   QUIZ_CONTAINER_ID,
   COUNTER_SPAN_ID,
+  TIMER_COUNTER,
+  BUTTONS,
+  RESULTS_DIV
 } from '../constants.js';
 import showCurrentQuestion from "../handlers/showCurrentQuestion.js";
 import createDOMElement from "../utils/createDOMElement.js";
@@ -15,6 +18,7 @@ import { quizData } from '../data.js';
 import clearDOMElement from '../utils/clearDOMElement.js';
 import setTimeOut from '../handlers/setTimer.js';
 import creatTimerElement from '../views/creatTimeElement.js';
+import countCorrectAnswers from '../utils/countCurrentAnswers.js';
 
 
 const initializeQuiz = () => {
@@ -41,23 +45,49 @@ const startButton = () => {
 
 
 const setupQuizHTML = () => {
-    const userInterfaceContainer = getDOMElement('user-interface');
+  const userInterfaceContainer = getDOMElement('user-interface');
+  const timerCounter = createDOMElement('div', { id: TIMER_COUNTER });
+  const btns = createDOMElement('div', {id: BUTTONS})
     const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
     const questionContainer = createDOMElement('div', { id: QUESTION_CONTAINER_ID });
     const appendTimer = creatTimerElement();
-  const counterSpan = createDOMElement('span', { id: COUNTER_SPAN_ID });
-    quizContainer.appendChild(appendTimer);
-    quizContainer.appendChild(questionContainer);
-// add a previous button
-    const previousQuestionButton = createPreviousQuestionButtonElement();
-    quizContainer.appendChild(previousQuestionButton);
-    //Next button
-    const nextQuestionButton = createNextQuestionButtonElement();
-  quizContainer.prepend(counterSpan);
-    quizContainer.appendChild(nextQuestionButton);
-
+    const counterSpan = createDOMElement('h3', { id: COUNTER_SPAN_ID });
+    counterSpan.innerText = (countCorrectAnswers());
+  
+  quizContainer.appendChild(questionContainer);
   console.log(quizContainer);
   userInterfaceContainer.appendChild(quizContainer);
+  timerCounter.appendChild(counterSpan);
+  timerCounter.appendChild(appendTimer);
+  userInterfaceContainer.prepend(timerCounter);
+  // add a previous button
+  const previousQuestionButton = createPreviousQuestionButtonElement();
+  btns.appendChild(previousQuestionButton);
+
+  userInterfaceContainer.appendChild(btns);
+    //Next button
+  const nextQuestionButton = createNextQuestionButtonElement();
+  btns.appendChild(nextQuestionButton);
+  const resultsDiv = createDOMElement('div', { id: RESULTS_DIV });
+  btns.appendChild(resultsDiv);
+  for (let i = 0; i < 10; i++){
+    const div = createDOMElement('div');
+    const img = createDOMElement('img');
+    img.src = '';
+    div.appendChild(img);
+    resultsDiv.appendChild(div);
+  }
+  const okAudio = createDOMElement('audio');
+  okAudio.classList.add('ok-audio');
+  okAudio.src = '../public/ok.mp3';
+  
+
+  const noAudio = createDOMElement('audio');
+  noAudio.classList.add('no-audio');
+  noAudio.src = '../public/no.mp3';
+  userInterfaceContainer.appendChild(noAudio);
+  userInterfaceContainer.append(okAudio);
+  
 };
 
 window.addEventListener('load', initializeQuiz);

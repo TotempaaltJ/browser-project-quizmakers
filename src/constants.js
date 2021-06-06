@@ -16,4 +16,7 @@ export const COUNTER_SPAN_ID = 'counter-span';
 export const PREVIOUS_QUESTION_BUTTON_ID = 'previous-question-button';
 export const TIMER_OUT = 'timer-out';
 export const SUBMIT_BTN_ID = 'submit-btn';
+export const TIMER_COUNTER = 'timer-counter';
+export const BUTTONS = 'btns';
+export const RESULTS_DIV = 'results-div';
 
