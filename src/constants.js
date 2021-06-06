@@ -19,4 +19,6 @@ export const SUBMIT_BTN_ID = 'submit-btn';
 export const TIMER_COUNTER = 'timer-counter';
 export const BUTTONS = 'btns';
 export const RESULTS_DIV = 'results-div';
+export const SUMMARY_ID = 'summery';
+
 

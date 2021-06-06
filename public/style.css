@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,12 +39,15 @@ h1 span.fade {
 
 
 
+
 .centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  
+  
 }
 
 .centered p {
@@ -72,6 +76,7 @@ h1 span.fade {
     box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, .5);
     min-height: 80vh;
 }
+
 
 ol {
     list-style: none;
@@ -168,4 +173,132 @@ li:hover {
     width: 90%;
     margin-top: 5px;
     filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.623));
+}
+
+#summery{
+  background-color: #188BD8;
+  margin: 0;
+  padding: 0;
+}
+
+.questions-text{
+  text-align: center;
+  margin-left: auto;
+
+
+}
+.first-table{
+ 
+  text-align: center;
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 30px;
+  border:1px solid transparent ; 
+  margin-bottom: 30px;
+  border-collapse: collapse;
+ 
+}
+
+.first-table td {
+  padding: 8px 15px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  
+  padding: 25px;
+  border-collapse: collapse;
+ 
+}
+.summary-h2{
+  text-align: center;
+  margin:100px;
+  display : inline;
+}
+/* Result */
+.result-box {
+  text-align: center;
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.result-box  h1 {
+  font-size: 36px;
+  line-height: 40px;
+  color: #188BD8;
+  padding: 10px;
+}
+.result-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+.result-box table td {
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+  padding: 8px 15px;
+  font-weight: 500;
+  color: #000000;
+  width: 50%;
+  text-align: left;
+}
+.btn {
+  background-color: #188BD8;
+  padding: 20px;
+  color: #fff;
+  border: 1px solid #188BD8;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 30%;
+  cursor: pointer;
+}
+/* Start Button */
+.start-btn {
+  background: #188bd8;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.start-btn:hover {
+  background: #fff;
+  color: #188bd8;
+}
+.start-btn:before,
+.start-btn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #188bd8;
+  transition: 500ms ease all;
+}
+.start-btn:after {
+  right: 0;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.start-btn:hover:before,
+.start-btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+
 }

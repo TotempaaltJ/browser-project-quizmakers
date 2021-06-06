@@ -42,37 +42,14 @@ function complete() {
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(question.answers[answerKey]);
     answer.dataset.questionIndex = quizData.currentQuestionIndex; // 0, 1, 2 ...
-    answer.dataset.answerValue = answerKey;
+    answer.dataset.answerValue = answerKey; // 'a', 'b', 'c'
+    answer.classList.add('li-list');
     
-  //   //set answers effect
-  //   const setEffectItem = (answer) => {
-  //     const answerText = answer.textContent;
-  //     const arrAnswerText = answerText.split('');
-  //     answer.innerHTML = '';
-  //     for (let i = 0; i < arrAnswerText.length; i++) {
-  //       answer.innerHTML += "<span>" + arrAnswerText[i] + "</span>";
-  //     }
-  //     let charItem = 0;
-  //     let timerItem = setInterval(onTickItem, 50);
-  //     function onTickItem() {
-  //     const spanAnswer = answer.querySelectorAll('span')[charItem];
-  //     spanAnswer.classList.add('fade-out');
-  //     charItem++;
-  //     if (charItem === arrAnswerText.length) {
-  //         completeItem();  
-  //         }
-  //     }
-  // function completeItem() {
-  //     clearInterval(timerItem);
-  //     timerItem = null;
-  //     }
-  //   }
-  //     setTimeout(() => setEffectItem(answer), interval);
-  //    interval += 1000;
-    // 'a', 'b', 'c'
+
     answerContainer.addEventListener('click', clickAnswerHandler, {
       once: true,
     });
+    
 
     answerContainer.appendChild(answer);
   }
