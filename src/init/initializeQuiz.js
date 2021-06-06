@@ -4,14 +4,10 @@ import {
   QUESTION_CONTAINER_ID,
   QUIZ_CONTAINER_ID,
   COUNTER_SPAN_ID,
-
   TIMER_COUNTER,
   BUTTONS,
   RESULTS_DIV,
   SUMMARY_ID,
-
- 
-
 } from '../constants.js';
 import showCurrentQuestion from '../handlers/showCurrentQuestion.js';
 import createDOMElement from '../utils/createDOMElement.js';
@@ -25,10 +21,6 @@ import setTimeOut from '../handlers/setTimer.js';
 import creatTimerElement from '../views/creatTimeElement.js';
 import countCorrectAnswers from '../utils/countCurrentAnswers.js';
 
-
-
-
-
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
 
@@ -38,7 +30,6 @@ const initializeQuiz = () => {
 
 const startButton = () => {
 
-  const btns = createDOMElement('div', {id: BUTTONS})
 
   const userInterfaceContainer = document.querySelector('#user-interface');
   const startBtn = document.createElement('button');
@@ -54,48 +45,37 @@ const startButton = () => {
 };
 
 const setupQuizHTML = () => {
+  const userInterfaceContainer = getDOMElement('user-interface');
+  const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
+  const questionContainer = createDOMElement('div', { id: QUESTION_CONTAINER_ID });
+  const appendTimer = creatTimerElement();
 
-    const userInterfaceContainer = getDOMElement('user-interface');
-    const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
-    const questionContainer = createDOMElement('div', { id: QUESTION_CONTAINER_ID });
-    const appendTimer = creatTimerElement();
-    //add counter span
+  //add counter span
   const counterSpan = createDOMElement('span', { id: COUNTER_SPAN_ID });
-   counterSpan.innerText = (countCorrectAnswers());
-   quizContainer.appendChild(counterSpan);
-    quizContainer.appendChild(appendTimer);
-    quizContainer.appendChild(questionContainer);
-// add a previous button
-    const previousQuestionButton = createPreviousQuestionButtonElement();
-    quizContainer.appendChild(previousQuestionButton);
-    //Next button
-    const nextQuestionButton = createNextQuestionButtonElement();
-    quizContainer.appendChild(nextQuestionButton);
-    //add summary div
-      const summary = createDOMElement( 'div',{id:SUMMARY_ID})
-      //styling
-      summary.style.width = '100%'
-      summary.style.height = 'auto'
-    
-      
-      summary.style.position = 'absolute'
-      summary.style.zIndex= '10'
-       document.body.prepend(summary)
-      
-      //add restart btn
-     
+  counterSpan.innerText = (countCorrectAnswers());
+  
+  quizContainer.appendChild(counterSpan);
+  quizContainer.appendChild(appendTimer);
+  quizContainer.appendChild(questionContainer);
 
-
-
-     
-     
-      
-   
+  //add summary div
+  const summary = createDOMElement( 'div',{id:SUMMARY_ID})
+  //styling
+  summary.style.width = '100%'
+  summary.style.height = 'auto'
+  summary.style.position = 'absolute'
+  summary.style.zIndex= '10'
+  document.body.prepend(summary)
+  
+  //add restart btn
   console.log(quizContainer);
   userInterfaceContainer.appendChild(quizContainer);
+  const timerCounter = createDOMElement('div', { id: TIMER_COUNTER });
   timerCounter.appendChild(counterSpan);
   timerCounter.appendChild(appendTimer);
   userInterfaceContainer.prepend(timerCounter);
+
+  const btns = createDOMElement('div', {id: BUTTONS})
   // add a previous button
   const previousQuestionButton = createPreviousQuestionButtonElement();
   btns.appendChild(previousQuestionButton);
@@ -123,7 +103,6 @@ const setupQuizHTML = () => {
   noAudio.src = '../public/no.mp3';
   userInterfaceContainer.appendChild(noAudio);
   userInterfaceContainer.append(okAudio);
-  
 };
 
 window.addEventListener('load', initializeQuiz);
