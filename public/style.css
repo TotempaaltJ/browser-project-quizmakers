@@ -36,15 +36,31 @@ h1 span.fade {
     opacity: 1;
 }
 
+
+
 .centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  
+}
+
+.centered p {
+    font-size: 84px;
+    font-weight: bold;
+    color: #136a8a;
+}
+
+#welcome {
+    opacity: 0;
+    transform: translateY(50px);
+    transmition: all .4s ease-in-out;
+}
+
+#welcome.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 #user-interface {
@@ -116,17 +132,17 @@ li:hover {
     margin: 20px 0px;
 }
 .btn {
-    padding: 12px 25px;
+    padding: 12px 20px;
     background: linear-gradient(35deg, #136a8a,#26787198);
     color: #ffffff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
-    width: 28%;
-    margin-right: 20px;
+    width: 30%;
+    margin-right: 10px;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
 }
 

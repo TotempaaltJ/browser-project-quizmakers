@@ -38,7 +38,6 @@ const startButton = () => {
         setupQuizHTML();
         showCurrentQuestion();  
         setTimeOut();
-
     })
     userInterfaceContainer.appendChild(startBtn)
 }

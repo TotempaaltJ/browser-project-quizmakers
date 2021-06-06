@@ -21,12 +21,12 @@ function clickAnswerHandler(event) {
   
   if (correctAnswer === userAnswer) {
     divImg[quizData.currentQuestionIndex].firstChild.src = '../public/Ok.png';
-    const okAudio = document.querySelector('.ok-audio');
-    okAudio.play();
+    // const okAudio = document.querySelector('.ok-audio');
+    // okAudio.play();
   } else {
     divImg[quizData.currentQuestionIndex].firstChild.src = '../public/notOk.png';
-    const audioNo = document.querySelector('.no-audio');
-    audioNo.play();
+    // const audioNo = document.querySelector('.no-audio');
+    // audioNo.play();
   };
 }
 
